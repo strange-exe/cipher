@@ -1,0 +1,86 @@
+/* === Base === */
+* { font-family: 'Inter', sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
+body { min-height: 100vh; }
+
+.gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+
+/* === Header === */
+.header { padding: 1.5rem; text-align: center; }
+.title { font-size: 1.875rem; font-weight: bold; color: white; }
+.subtitle { color: rgba(255,255,255,0.8); font-size: 0.875rem; margin-top: 0.25rem; }
+
+/* === Layout === */
+.main { max-width: 64rem; margin: 0 auto; padding: 0 1.5rem 3rem; }
+.card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); border-radius: 1.5rem; padding: 2rem; }
+
+/* === Floating animation === */
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-20px)} }
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+/* === Mode Switch === */
+.mode-switch { display: flex; justify-content: center; margin-bottom: 2rem; }
+.mode-inner { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 9999px; padding: 0.5rem; }
+.mode-btn { padding: 0.75rem 1.5rem; border-radius: 9999px; color: white; font-weight: 500; background: transparent; border: none; cursor: pointer; }
+.mode-btn.active { background: rgba(255,255,255,0.2); }
+
+/* === Inputs === */
+.section { margin-bottom: 1.5rem; }
+.label { display: block; color: white; font-weight: 500; margin-bottom: 0.75rem; }
+.input-box {
+  width: 100%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: white;
+}
+textarea.input-box { height: 8rem; resize: vertical; }
+.input-box::placeholder { color: rgba(255,255,255,0.6); }
+.input-box:focus { outline: none; }
+
+/* === Button === */
+.action { text-align: center; margin-top: 1.5rem; }
+.process-btn {
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  color: white; font-weight: bold;
+  padding: 1rem 2rem; border-radius: 0.75rem;
+  border: none; cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.process-btn:hover { transform: scale(1.05); }
+
+/* === Result === */
+.result-container { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; }
+.result-container.show { max-height: 400px; }
+.result-card { background: rgba(255,255,255,0.1); border-radius: 0.75rem; padding: 1.5rem; margin-top: 1.5rem; }
+.result-box { background: rgba(255,255,255,0.1); border-radius: 0.75rem; padding: 1rem; min-height: 100px; position: relative; }
+.result-text { color: white; white-space: pre-wrap; word-break: break-word; }
+.copy-btn { position: absolute; top: 0.75rem; right: 0.75rem; background: rgba(255,255,255,0.2); color: white; padding: 0.5rem; border-radius: 0.5rem; border: none; cursor: pointer; }
+.copy-btn:hover { background: rgba(255,255,255,0.3); }
+/* === Footer === */
+.footer { text-align: center; padding: 1rem; color: rgba(255,255,0.6); font-size: 0.875rem; }
+.footer a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; }
+.footer a:hover { text-decoration: underline; }
+/* === Responsive === */
+@media (max-width: 640px) {
+  .title { font-size: 1.5rem; }
+  .card { padding: 1.5rem; }
+  .process-btn { width: 100%; }
+}
+/* === Dark Mode Toggle === */
+body.dark-mode { background: #121212; }
+body.dark-mode .header { background: #1e1e1e; }
+body.dark-mode .card { background: rgba(30,30,30,0.8
+); border: 1px solid rgba(255,255,255,0.1); }
+body.dark-mode .mode-inner { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+body.dark-mode .mode-btn.active { background: rgba(255,255,255,0.1); }
+body.dark-mode .input-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); color: white; }
+body.dark-mode .input-box::placeholder { color: rgba(255,255,255,0.5); }
+body.dark-mode .result-card { background: rgba(30,30,30,0.8); }
+body.dark-mode .result-box { background: rgba(255,255,255,0.05); }
+body.dark-mode .copy-btn { background: rgba(255,255,255,0.1); color: white; }
+body.dark-mode .copy-btn:hover { background: rgba(255,255,255,0.2); }
+body.dark-mode .footer { color: rgba(255,255,255,0.6); }
+body.dark-mode .footer a { color: rgba(255,255,255,0.8); }
+body.dark-mode .footer a:hover { text-decoration: underline; }
