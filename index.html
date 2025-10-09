@@ -3,51 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Crypter - Encryption & Decryption</title>
+  <title>Cipher</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="gradient-bg">
 
-  <!-- Header -->
   <header class="header">
     <div class="header-inner">
-      <h1 class="title">Crypter</h1>
+      <h1 class="title">Cipher</h1>
       <p class="subtitle">Secure Encryption & Decryption</p>
     </div>
   </header>
 
-  <!-- Main -->
   <main class="main">
     <div class="card animate-float">
       
-      <!-- Mode Selection -->
       <div class="mode-switch">
         <div class="mode-inner">
           <button id="encryptBtn" class="mode-btn active"><img src="enc.png" class=icon>Encrypt</button>
-          <button id="decryptBtn" class="mode-btn"><img src="dec.png" class=icon> Decrypt</button>
+          <button id="decryptBtn" class="mode-btn"><img src="dec.png" class=icon>Decrypt</button>
         </div>
       </div>
-
-      <!-- Input Section -->
       <div class="section">
         <label class="label"><img src="input.svg"class=icon>Input Text</label>
         <textarea id="inputText" class="input-box" placeholder="Enter your text here..."></textarea>
       </div>
-
       <div class="section">
         <label class="label"><img src="key.svg" class=icon>Hash-Key</label>
         <input type="text" id="hashKey" class="input-box" placeholder="Enter your secret key (default: Abhi)">
       </div>
-
-      <!-- Action -->
       <div class="action">
         <button id="processBtn" class="process-btn">Process Text</button>
       </div>
-
-      <!-- Result -->
       <div id="resultContainer" class="result-container">
         <div class="result-card">
-          <label class="label">✨ Result</label>
+          <label class="label">Result</label>
           <div class="result-box">
             <pre id="resultText" class="result-text"></pre>
             <button id="copyBtn" class="copy-btn" title="Copy"><img src="clipboard.svg" alt="Copy" class="icon"></button>
