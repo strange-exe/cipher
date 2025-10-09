@@ -30,7 +30,7 @@ Encrypts words by rearranging characters and inserting random noise based on a g
 - CSS3
 - JavaScript
 
-### [Demo](https://abhinesh.me/cipher/)** 
+### [Demo](https://abhinesh.me/cipher/)
 
 ## Author
 **[Abhinesh](https://instagram.com/_abhinesh.exe)**
