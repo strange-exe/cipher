@@ -11,7 +11,6 @@ function updateMode(){
   decryptBtn.classList.toggle("active", currentMode==="decrypt");
 }
 
-// Seeded RNG
 function seededRandom(seed){
   let h=0; for(let i=0;i<seed.length;i++){ h=Math.imul(31,h)+seed.charCodeAt(i)|0; }
   return function(min,max){ h=Math.imul(48271,h)+0x7fffffff & 0x7fffffff; return min+ (h>>>0)%(max-min); }
@@ -19,7 +18,6 @@ function seededRandom(seed){
 
 const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ";
 
-// Encode
 function encode(words,key){
   return words.map(word=>{
     if(word.length===1) return word;
@@ -33,7 +31,6 @@ function encode(words,key){
   });
 }
 
-// Decode
 function decode(words,key){
   return words.map(word=>{
     if(word.length===1) return word;
@@ -48,7 +45,6 @@ function decode(words,key){
   });
 }
 
-// Process
 document.getElementById("processBtn").addEventListener("click",()=>{
   const text=document.getElementById("inputText").value.trim();
   const key=document.getElementById("hashKey").value.trim()||"Abhi";
@@ -59,7 +55,6 @@ document.getElementById("processBtn").addEventListener("click",()=>{
   document.getElementById("resultContainer").classList.add("show");
 });
 
-// Copy using local icon
 const copyBtn = document.getElementById("copyBtn");
 const resultText = document.getElementById("resultText");
 const icon = copyBtn.querySelector("img");
@@ -67,12 +62,11 @@ const icon = copyBtn.querySelector("img");
 copyBtn.addEventListener("click", () => {
   navigator.clipboard.writeText(resultText.textContent).then(() => {
     const originalSrc = icon.src;
-    icon.src = "check.svg";   // show check icon
+    icon.src = "check.svg";
     setTimeout(()=> { icon.src = originalSrc; }, 1500);
   });
 });
 
-// Dark Mode Toggle
 const darkModeToggle = document.getElementById("darkModeToggle");
 darkModeToggle.addEventListener("change", () => {
   document.body.classList.toggle("dark-mode", darkModeToggle.checked);
