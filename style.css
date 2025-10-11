@@ -6,7 +6,23 @@ body { min-height: 100vh; }
 
 /* === Header === */
 .header { padding: 1.5rem; text-align: center; }
-.title { font-size: 1.875rem; font-weight: bold; color: white; }
+.title {
+  font-size: 2.5rem; /* Increase font size */
+  font-weight: bold;
+  color: rgb(254, 254, 254);
+  text-shadow: 0 0 10px rgb(5, 201, 255), 
+               0 0 20px rgba(118, 75, 162, 0.8), 
+               0 0 30px rgba(118, 75, 162, 0.6);
+  letter-spacing: 2px; /* Add spacing between letters */
+  margin-bottom: 0.5rem; /* Add spacing below the title */
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+.title:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  text-shadow: 0 0 15px rgba(255, 255, 255, 1), 
+               0 0 25px rgba(118, 75, 162, 1), 
+               0 0 35px rgba(118, 75, 162, 0.8);
+}
 .subtitle { color: rgba(255,255,255,0.8); font-size: 0.875rem; margin-top: 0.25rem; }
 
 /* === Layout === */
@@ -59,9 +75,21 @@ textarea.input-box { height: 8rem; resize: vertical; }
 .copy-btn { position: absolute; top: 0.75rem; right: 0.75rem; background: rgba(255,255,255,0.2); color: white; padding: 0.5rem; border-radius: 0.5rem; border: none; cursor: pointer; }
 .copy-btn:hover { background: rgba(255,255,255,0.3); }
 /* === Footer === */
-.footer { text-align: center; padding: 1rem; color: rgba(255,255,0.6); font-size: 0.875rem; }
-.footer a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; }
-.footer a:hover { text-decoration: underline; }
+.footer {
+  text-align: center;
+  padding: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+}
+.footer a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
 /* === Responsive === */
 @media (max-width: 640px) {
   .title { font-size: 1.5rem; }
@@ -69,6 +97,51 @@ textarea.input-box { height: 8rem; resize: vertical; }
   .process-btn { width: 100%; }
 }
 /* === Dark Mode Toggle === */
+.dark-mode-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+.toggle-label {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  position: relative;
+}
+.toggle-label input {
+  display: none;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 25px;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 5px;
+  bottom: 2.5px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: #764ba2;
+}
+input:checked + .slider:before {
+  transform: translateX(25px);
+}
+
+/* === Dark Mode === */
 body.dark-mode { background: #121212; }
 body.dark-mode .header { background: #1e1e1e; }
 body.dark-mode .card { background: rgba(30,30,30,0.8
@@ -84,3 +157,17 @@ body.dark-mode .copy-btn:hover { background: rgba(255,255,255,0.2); }
 body.dark-mode .footer { color: rgba(255,255,255,0.6); }
 body.dark-mode .footer a { color: rgba(255,255,255,0.8); }
 body.dark-mode .footer a:hover { text-decoration: underline; }
+/* === Icon Styling === */
+.icon {
+  width: 20px; /* Resize icons */
+  height: 20px;
+  vertical-align: middle; /* Align icons with text */
+  margin-right: 0.5rem; /* Add spacing between icon and text */
+}
+
+/* Adjust copy button icon */
+.copy-btn .icon {
+  width: 16px;
+  height: 16px;
+  margin: 0; /* Remove extra spacing for the copy button icon */
+}

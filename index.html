@@ -8,7 +8,6 @@
   <link rel="icon" href="cipher.jpg">
 </head>
 <body class="gradient-bg">
-
   <header class="header">
     <div class="header-inner">
       <h1 class="title">Cipher</h1>
@@ -18,19 +17,18 @@
 
   <main class="main">
     <div class="card animate-float">
-      
       <div class="mode-switch">
         <div class="mode-inner">
-          <button id="encryptBtn" class="mode-btn active"><img src="enc.png" class=icon>Encrypt</button>
-          <button id="decryptBtn" class="mode-btn"><img src="dec.png" class=icon>Decrypt</button>
+          <button id="encryptBtn" class="mode-btn active"><img src="enc.png" class="icon">Encrypt</button>
+          <button id="decryptBtn" class="mode-btn"><img src="dec.png" class="icon">Decrypt</button>
         </div>
       </div>
       <div class="section">
-        <label class="label"><img src="input.svg"class=icon>Input Text</label>
+        <label class="label"><img src="input.svg" class="icon">Input Text</label>
         <textarea id="inputText" class="input-box" placeholder="Enter your text here..."></textarea>
       </div>
       <div class="section">
-        <label class="label"><img src="key.svg" class=icon>Hash-Key</label>
+        <label class="label"><img src="key.svg" class="icon">Hash-Key</label>
         <input type="text" id="hashKey" class="input-box" placeholder="Enter your secret key (default: Abhi)">
       </div>
       <div class="action">
@@ -45,9 +43,20 @@
           </div>
         </div>
       </div>
-
     </div>
   </main>
+
+  <!-- Dark Mode Toggle -->
+  <div class="dark-mode-toggle">
+    <label class="toggle-label">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 Cipher. All rights reserved. | <a href="#">Privacy Policy</a></p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

@@ -71,3 +71,9 @@ copyBtn.addEventListener("click", () => {
     setTimeout(()=> { icon.src = originalSrc; }, 1500);
   });
 });
+
+// Dark Mode Toggle
+const darkModeToggle = document.getElementById("darkModeToggle");
+darkModeToggle.addEventListener("change", () => {
+  document.body.classList.toggle("dark-mode", darkModeToggle.checked);
+});
